@@ -8,6 +8,7 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductItemDetailComponent } from './product-item-detail/product-item-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
     ProductItemComponent,
     ProductItemDetailComponent,
     CartComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

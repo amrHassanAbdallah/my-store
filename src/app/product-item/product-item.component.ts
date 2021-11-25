@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit,EventEmitter, Output } from '@angular/core';
+import { Product } from '../models/Product';
 
 @Component({
   selector: 'app-product-item',
@@ -6,10 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent implements OnInit {
+  
+  @Input() product:Product;
+  maxCount:number[] = [...Array(10).keys()];
+  @Output() addToCart: EventEmitter<Product> = new EventEmitter;
 
-  constructor() { }
+  constructor() { 
+    this.product = {
+      id: 0,
+      price:0,
+      count:1
+    }
+    this.maxCount.shift()
+   }
 
   ngOnInit(): void {
+  }
+
+  updateProductCount(n:any){
+    this.product.count = parseInt(n.target.value)
+
+  }
+  add(p: Product) {
+    this.addToCart.emit(p)
   }
 
 }

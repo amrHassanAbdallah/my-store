@@ -1,1 +1,14 @@
-<p>product-item works!</p>
+<div class="product-container">
+    <img src="{{product.url}}" class="product-image" alt="" srcset="">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>{{ product.price }}</p>
+    <select name="" id="product-{{product.id}}" class="select-input"  (change)="updateProductCount($event)">
+        <option *ngFor="let n of maxCount" [value]="n" >
+            {{ n }}
+        </option>
+    </select>
+    <button class="btn btn-primary" style="margin-right: 10px" (click)="add(product)">Add to cart</button>
+    <br>
+  </div>
+  
