@@ -1,6 +1,12 @@
 # MyStore
 
-This project is a single page app on top of angular to expirment with angular.
+This project is a single page app on top of angular.
+
+### Features
+* List products
+* View product details
+- Add product to cart
+- checkout products
 ### Dependencies
 * [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 ## Up & Running

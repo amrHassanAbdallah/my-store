@@ -6,6 +6,6 @@
     <input type="text" name="address" placeholder="enter your address, min length is 6" [(ngModel)]="address" required minlength="6"> 
 
     <label for="credit_card"> Credit card</label>
-    <input type="text" name="credit_card" placeholder="enter credit card number, min length is 16" [(ngModel)]="credit_card" required minlength="16"> 
+    <input type="number" name="credit_card" placeholder="enter credit card number, min length is 16" [(ngModel)]="credit_card" required minlength="16"> 
     <input type="submit" [disabled]="form.invalid" value="Submit" class="btn btn-primary">
 </form>

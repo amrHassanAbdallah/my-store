@@ -10,11 +10,10 @@ import { CartService } from '../services/cart.service';
 export class CartComponent implements OnInit {
   cart:Cart = new Cart();
   maxCount:number[] = [...Array(10).keys()];
+  
 
 
   constructor(private cartService:CartService) {
-    this.maxCount.shift()
-
    }
 
   ngOnInit(): void {
@@ -22,11 +21,15 @@ export class CartComponent implements OnInit {
   }
   updateProductCount(n:any){
     let val = parseInt(n.target.value)
-    let product = this.cart.products[this.cart.itemsPositionsById[n.target.id]]
-    const obj2 = { ...product };
-    obj2.count = val
-    this.cart.add(obj2)
-    alert("Product added to the cart!!")
+    let productId = parseInt(n.target.id)
+    this.cart.updateProductCount(productId,val)
+    if (val == 0){
+      alert("Product is removed from the cart!!")
+
+    }else{
+      alert("Product added to the cart!!")
+
+    }
 
   }
 
