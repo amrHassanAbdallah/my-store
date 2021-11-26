@@ -26,6 +26,8 @@ export class CartComponent implements OnInit {
     const obj2 = { ...product };
     obj2.count = val
     this.cart.add(obj2)
+    alert("Product added to the cart!!")
+
   }
 
 }
