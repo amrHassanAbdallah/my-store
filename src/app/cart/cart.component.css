@@ -1,3 +1,18 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  flex-basis: 100%;
+  flex: 1;
+}
 img {
     width: 100px;
     border-radius: 10px;
@@ -7,10 +22,8 @@ img {
     margin-bottom: 12px;
   }
   
-  .cart-item {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
+  .margin-right-20{
+    margin-right: 20px;
   }
   
   .cart-item-details {
@@ -29,6 +42,13 @@ img {
   .cart-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    margin-top: 64px;
+  }
+  
+  .items-index {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 64px;
   }

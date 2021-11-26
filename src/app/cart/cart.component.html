@@ -1,1 +1,53 @@
-<p>cart works!</p>
+
+
+
+
+<div *ngIf="cart.numberOfProducts; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+    <div class="row">
+        <div class="column">
+            <span class="empty-cart-message">Total is {{ this.cart.getCost()}}</span>
+            <div class="items-index">
+                <div  *ngFor="let product of cart.products">
+                    <div >
+                        <div class="cart-item-details">
+                            <div class="cart-container">
+                                <div class="cart-panel">
+                                    <h4>{{product.name}}</h4>
+                                    <b class="margin-right-20">{{product.price}}</b>
+                                    <select name="" id="{{product.id}}" class="number-input"  (change)="updateProductCount($event)">
+                                        <option *ngFor="let n of maxCount" [value]="n" [selected]="product.count == n" >
+                                            {{ n }}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="cart-panel">
+                                    <img src="{{product.url}}" alt="">
+                                </div>                           
+                                
+                            </div>
+                       
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="column">
+            <div class="form-marign">
+                <input type="text">
+            </div>
+        </div>
+    </div>
+   
+       
+
+   
+</ng-template>
+<ng-template #elseBlock>
+    
+    
+   <b class="empty-cart-message"> Add products to your cart!! </b> 
+
+</ng-template>
