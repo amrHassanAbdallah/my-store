@@ -9,8 +9,8 @@ import { CartService } from '../services/cart.service';
 })
 export class CartComponent implements OnInit {
   cart:Cart = new Cart();
-  maxCount:number[] = [...Array(10).keys()];
-  
+  maxCount:number[] = [...Array(100).keys()];
+
 
 
   constructor(private cartService:CartService) {

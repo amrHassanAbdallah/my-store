@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/Product';
 import { CartService } from '../services/cart.service';
@@ -13,7 +13,7 @@ export class ProductItemDetailComponent implements OnInit {
   id: number = 0;
   product:Product= new Product();
   maxCount:number[] = [...Array(10).keys()];
-
+  @Output() addToCart:EventEmitter<Product> = new EventEmitter;
 
   constructor(private route: ActivatedRoute,private productsService:ProductsService,private cartService:CartService) { 
     this.route.params.subscribe(params => {
@@ -24,7 +24,9 @@ export class ProductItemDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.product =  this.productsService.getProduct(this.id)
+    this.productsService.getProduct(this.id).subscribe(p=>{
+      this.product =  p
+    })
   }
 
 
@@ -32,12 +34,9 @@ export class ProductItemDetailComponent implements OnInit {
     this.product.count = parseInt(n.target.value)
 
   }
-  // add(p: Product) {
-  //   this.addToCart.emit(p)
-  // }
-
+  
   add(p:Product){
-   this.cartService.add(p) 
-   alert("Product added to the cart!!")
+    this.addToCart.emit(p)
+    alert("Product added to the cart!!")
   }
 }

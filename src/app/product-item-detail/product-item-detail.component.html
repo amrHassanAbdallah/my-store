@@ -6,8 +6,8 @@
         <h3>{{ product.name }}</h3>
         <p>{{ product.description }}</p>
         <p>{{ product.price }}</p>
-        <select name="" id="product-{{product.id}}" class="select-input"  (change)="updateProductCount($event)">
-            <option *ngFor="let n of maxCount" [value]="n" >
+        <select name="" id="product-{{product.id}}" class="select-input" (ngModelChange)="updateProductCount($event)" >
+            <option *ngFor="let n of maxCount" [ngValue]="n" >
                 {{ n }}
             </option>
         </select>

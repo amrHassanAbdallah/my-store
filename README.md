@@ -6,7 +6,8 @@ This project is a single page app on top of angular.
 * List products
 * View product details
 - Add product to cart
-- checkout products
+- Checkout products
+- Remove product from cart
 ### Dependencies
 * [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 ## Up & Running

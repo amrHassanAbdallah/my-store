@@ -16,7 +16,7 @@
                                     <h4>{{product.name}}</h4>
                                     <b class="margin-right-20">{{product.price}}</b>
                                     <select name="" id="{{product.id}}" class="number-input"  (change)="updateProductCount($event)">
-                                        <option *ngFor="let n of maxCount" [value]="n" [selected]="product.count == n" >
+                                        <option *ngFor="let n of maxCount" [ngValue]="n" [selected]="product.count == n" >
                                             {{ n }}
                                         </option>
                                     </select>

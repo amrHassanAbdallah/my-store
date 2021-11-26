@@ -26,7 +26,8 @@ export class Cart {
   updateProductCount(id:number,count:number){
     let postion =  this.itemsPositionsById[id]
     let product = this.products[postion]
-
+    let difference = count - product.count
+    this.cost += difference * product.price
     if (count == 0){
       this.products.splice(postion, 1);
       delete this.itemsPositionsById[id]
@@ -34,8 +35,7 @@ export class Cart {
     }else{
       product.count = count
     }
-      let difference = count - product.count
-      this.cost += difference * product.price
+     
     
 
   }
