@@ -1,1 +1,16 @@
-<p>product-item-detail works!</p>
+<div class="detail-container">
+    <div class="detail-item">
+        <a routerLink="products/{{product.id}}">
+            <img src="{{product.url}}" class="product-image" alt="" srcset="">
+        </a>
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
+        <select name="" id="product-{{product.id}}" class="select-input"  (change)="updateProductCount($event)">
+            <option *ngFor="let n of maxCount" [value]="n" >
+                {{ n }}
+            </option>
+        </select>
+        <button class="btn btn-primary" style="margin-right: 10px" (click)="add(product)">Add to cart</button>
+    </div>
+</div>

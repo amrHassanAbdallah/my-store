@@ -56,4 +56,8 @@ export class ProductsService {
       "description": "Wear it with style!"
     }]
   }
+  getProduct(id:number){
+    let products = this.getProducts()
+    return products.filter((p)=>p.id == id)[0]
+  }
 }

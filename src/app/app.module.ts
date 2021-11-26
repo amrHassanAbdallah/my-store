@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,7 @@ import { ProductItemDetailComponent } from './product-item-detail/product-item-d
 import { CartComponent } from './cart/cart.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { HeaderComponent } from './header/header.component';
+import { ConfirmationFormComponent } from './confirmation-form/confirmation-form.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { HeaderComponent } from './header/header.component';
     ProductItemDetailComponent,
     CartComponent,
     ConfirmationComponent,
-    HeaderComponent
+    HeaderComponent,
+    ConfirmationFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
